@@ -7,3 +7,11 @@ class Comment {
     Comment.all.push(this)
   }
 }
+
+static findImage(imageId) {
+  const theImage = Image.all[imageId];
+  theImage.comments = Comment.all.filter(eachComment => eachComment.imageId === imageId);
+  return theImage;
+}
+
+static
