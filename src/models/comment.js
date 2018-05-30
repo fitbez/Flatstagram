@@ -6,12 +6,22 @@ class Comment {
     this.commentContent = commentContent;
     Comment.all.push(this)
   }
-}
+
 
 static findImage(imageId) {
   const theImage = Image.all[imageId];
   theImage.comments = Comment.all.filter(eachComment => eachComment.imageId === imageId);
   return theImage;
+  }
+
+  static commentEl() {
+    let htmlString = '';
+    Comment.all.forEach(eachComment => {
+      htmlString += `<li
+      id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`
+    });
+    return htmlString;
+  }
 }
 
-static
+Comment.all = [];
