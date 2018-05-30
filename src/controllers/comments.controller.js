@@ -12,11 +12,11 @@ class CommentsController {
   addCommentFormListener() {
     // create comment form listener code here
     this.$addCommentForm.on('submit', function(event) {
-      event.preventDefualt(); // so that the defualt behaviour of forms won't happen
+      event.preventDefault(); // so that the defualt behaviour of forms won't happen
       const imageId = $(this).data('id');
       const commentText = $(this).children('.user-text').val();
-      const aComment = new Comment(commmentText, imageId);
-      commentController.render(aComment);
+      const aComment = new Comment(commentText, imageId);
+        CommentsController.render(aComment);
     });
   }
 

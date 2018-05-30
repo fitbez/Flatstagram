@@ -17,7 +17,7 @@ static findImage(imageId) {
     let htmlString = '';
     Comment.all.forEach(eachComment => {
       htmlString += `<li
-      id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`
+      id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`;
     });
     return htmlString;
   }
