@@ -7,20 +7,22 @@ class Comment {
     Comment.all.push(this)
   }
 
-static findImage(imageId) {
-  const theImage = Image.all[imageId];
-  theImage.comments = Comment.all.filter(eachComment => eachComment.imageId === imageId);
-  return theImage;
-  }
+// returns the full detials of an image
+  static findImage(imageId) {
+    const theImage = Image.all[imageId];
+    theImage.comments = Comment.all.filter(eachComment => eachComment.imageId === imageId);
+    return theImage;
+    }
 
-  static commentEl() {
-    let htmlString = '';
-    Comment.all.forEach(eachComment => {
-      htmlString += `<li
-      id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`;
-    });
-    return htmlString;
-  }
+// returns html string equivalent of all comments
+    static commentEl() {
+      let htmlString = '';
+      Comment.all.forEach(eachComment => {
+        htmlString += `<li
+        id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`;
+      });
+      return htmlString;
+    }
 }
 
 Comment.all = [];
