@@ -2,12 +2,18 @@ class CommentsController {
   constructor() {
     this.$addCommentForm = $('.add-comment')
     this.comment = {};
+
   }
 
   init() {
     // kick off controller from here
     this.addCommentFormListener();
   }
+
+ // method
+function validatecomment(imageId, commentText) {
+    Comment.all
+}
 
   addCommentFormListener() {
     // create comment form listener code here
@@ -23,6 +29,6 @@ class CommentsController {
 // appends the comment to the ul of the image
   static render(comment) {
     const ul =$(`ul#comments-${comment.imageId}`);
-    ul.append(`<li>${comment.commentContent}</li>`);
+    ul.append(`<li><button data-commentid =${Comment.all.length -1} class= 'destroy-comment'>x</button>${comment.commentContent}</li>`);
   }
-}
+};

@@ -5,6 +5,7 @@ class Comment {
     this.imageId = imageId;
     this.commentContent = commentContent;
     Comment.all.push(this)
+
   }
 
 // returns the full detials of an image
@@ -19,10 +20,12 @@ class Comment {
       let htmlString = '';
       Comment.all.forEach(eachComment => {
         htmlString += `<li
-        id="comment-text-${eachcomment.id}">${eachComment.commentContent}</li>`;
+        id="comment-text-${eachComment.id}">${eachComment.commentContent}</li>`;
       });
       return htmlString;
     }
+
 }
+
 
 Comment.all = [];
