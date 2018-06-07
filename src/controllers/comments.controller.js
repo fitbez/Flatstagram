@@ -13,10 +13,10 @@ class CommentsController {
 
  // method
 removeCommentListener() {
-  this('body').on('click', '.destroy-comment' function(){
+$('body').on('click', '.destroy-comment', function(){
     const imageId = $(this).data('commentid');
-    $(this).splice(imageId, 1);
-    Comment.all.parent('li').remove();
+    Comment.all.splice(imageId, 1);
+    $(this).parent('li').remove();
   })
 }
   addCommentFormListener() {
