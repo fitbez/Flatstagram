@@ -8,13 +8,17 @@ class CommentsController {
   init() {
     // kick off controller from here
     this.addCommentFormListener();
+    this.removeCommentListener();
   }
 
  // method
-function validatecomment(imageId, commentText) {
-    Comment.all
+removeCommentListener() {
+  this('body').on('click', '.destroy-comment' function(){
+    const imageId = $(this).data('commentid');
+    $(this).splice(imageId, 1);
+    Comment.all.parent('li').remove();
+  })
 }
-
   addCommentFormListener() {
     // create comment form listener code here
     this.$addCommentForm.on('submit', function(event) {
